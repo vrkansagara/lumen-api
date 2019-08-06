@@ -99,5 +99,6 @@ $app->router->group([
 ], function ($router) {
     require __DIR__ . '/../routes/api.php';
 });
-
+$app->configure('api');
+$app->configure('elasticsearch');
 return $app;

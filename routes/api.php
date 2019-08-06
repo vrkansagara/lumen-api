@@ -5,5 +5,9 @@ $router->get('/', function () use ($router) {
         'ack' => time(),
         'version' => $router->app->version(),
     ];
-    return response()->json($responseData);
+    $headers = [
+        'X-Powered-By' => 'Me',
+        'X-protection' => 1
+    ];
+    return response()->json($responseData)->withHeaders($headers);
 });

@@ -15,6 +15,8 @@ class XClacksOverheadMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $response = $next($request);
+        $response->header('X-Clacks-Overhead','GNU Terry Pratchett');
+        return $response;
     }
 }

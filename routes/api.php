@@ -7,7 +7,6 @@ $router->get('/', function () use ($router) {
         'environment' => config('api.environment'),
     ];
     $headers = [
-        'X-Powered-By' => 'Me',
         'X-protection' => 1
     ];
     return response()->json($responseData)->withHeaders($headers);
